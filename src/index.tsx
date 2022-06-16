@@ -47,7 +47,9 @@ class Scratch extends Component<Props, State> {
 
   brushImage?: any
 
-  image: HTMLImageElement
+  image: HTMLImageElement;
+
+  isFinished: boolean = false;
 
   constructor(props: Props) {
     super(props);
@@ -81,6 +83,7 @@ class Scratch extends Component<Props, State> {
     this.canvas.style.opacity = '1';
     this.ctx.globalCompositeOperation = 'source-over';
     this.ctx.drawImage(this.image, 0, 0, this.props.width, this.props.height);
+    this.isFinished = false;
   }
 
   getFilledInPixels(stride: number) {
@@ -157,6 +160,10 @@ class Scratch extends Component<Props, State> {
   }
 
   handlePercentage(filledInPixels = 0) {
+    if (this.isFinished) {
+      return;
+    }
+
     let finishPercent = 70;
     if (this.props.finishPercent !== undefined) {
       finishPercent = this.props.finishPercent;
@@ -172,6 +179,8 @@ class Scratch extends Component<Props, State> {
       if (this.props.onComplete) {
         this.props.onComplete();
       }
+
+      this.isFinished = true;
     }
   }
 
