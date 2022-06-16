@@ -5,9 +5,10 @@
 [![NPM](https://img.shields.io/npm/v/react-scratchcard-v2.svg)](https://www.npmjs.com/package/react-scratchcard-v2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 
-## Note
-This is a clone of https://github.com/aleksik/react-scratchcard
-##### Improvement:
+##### Original repo by Aleksik (not maintained)
+https://github.com/aleksik/react-scratchcard
+
+##### V2 Improvement ✨
 - Resize the image using width and height props (in the original repo, the image was croped)
 - Smooth fade out animation on scratch complete
 - Add type definition (ts)
@@ -26,7 +27,7 @@ npm install --save react-scratchcard-v2
 ```
 or
 ```bash
-yarn add react-scratchcard-v2 
+yarn add react-scratchcard-v2
 ```
 
 
@@ -39,7 +40,7 @@ import ScratchCard from 'react-scratchcard-v2';
 import * as IMG from './img.jpg';
 
 const App = () => {
-    
+
   const ref = useRef<ScratchCard>(null);
 
   const onClickReset = () => {
@@ -156,4 +157,4 @@ const App = () => {
 
 ## License
 
-MIT © [dopey2](https://github.com/dopey2) 
+MIT © [dopey2](https://github.com/dopey2)
